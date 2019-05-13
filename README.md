@@ -2,7 +2,7 @@
 
 Here I reproduce a bug with Cosmos DB (Mongo API). I catch an error with the following text: `MongoError: document does not contain shard key`, but my insert operation actually has shard key.
 
-## **Important!** Bug reproduced with mongoose ODM
+## Mongoose ODM
 
 To reproduce the bug I have used [mongoose](https://mongoosejs.com/) a popular object data modeling tool atop of basic Mongo driver.
 With original Mongo driver as explained in the Cosmos DB quickstart page all works fine.
@@ -13,8 +13,10 @@ With original Mongo driver as explained in the Cosmos DB quickstart page all wor
 2. Create a collection and as a `Shard Key` I choose `mykey` field name.
 3. Checkout code in the example
 4. Create a `.env` file for environments (see example `.env.sample`)
-5. Run follwoing commands to install and run the code to reproduce an error:
+5. Run following commands to install and run the code to reproduce an error:
 ```
 npm install
-npm run start
+npm start
 ```
+
+Actually the first document is succesfully created but after creation we have this kind of error.
